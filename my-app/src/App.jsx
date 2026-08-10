@@ -9,6 +9,8 @@
 // }
 // export default App;
 
+// import { BrowserRouter, Router } from "react-router-dom";
+
 
 
 
@@ -480,20 +482,77 @@
 
 
 //use one usestate for multiple chilld component
-import { useState } from "react";
-import Input from "./Input";
-import Display from "./Display";
+// import { useState } from "react";
+// import Input from "./Input";
+// import Display from "./Display";
 
-function App() {
-  const [name, setName] = useState("");
+// function App() {
+//   const [name, setName] = useState("");
 
-  return (
-    <>
-      <Input setName={setName} />
+//   return (
+//     <>
+//       <Input setName={setName} />
 
-      <Display name={name} />
-    </>
+//       <Display name={name} />
+//     </>
+//   );
+// }
+
+// export default App;
+
+//page swithing
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+// import Home from "./pages/Home";
+// import Contact from "./pages/Contact";
+// import About from "./pages/About";
+
+// function App(){
+
+//   return(
+//     <BrowserRouter>
+//     <Routes>
+//         <Route path="/" element={<Home />} />
+
+//         <Route path="./pages/about"  element={<About />} />
+
+//         <Route path="./pages/contact" element={<Contact />} />
+//       </Routes>
+//     <nav>
+//         <Link to="/">Home</Link>
+//         <Link to="./pages/about">About</Link>
+//         <Link to="./pages/contact">Contact</Link>
+//     </nav>
+     
+
+//     </BrowserRouter>
+
+//   );
+// }
+// export default App;
+
+
+
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+
+function App(){
+  return(
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="./pages/about"  element={<About />} />
+      <Route path="./pages/contact" element={<Contact />} />
+    </Routes>
+     <nav>
+        <Link to="/">Home</Link>
+        <Link to="./pages/about">About</Link>
+        <Link to="./pages/contact">Contact</Link>
+    </nav>
+    </BrowserRouter>
   );
 }
-
 export default App;
