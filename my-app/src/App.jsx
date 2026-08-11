@@ -534,28 +534,7 @@
 
 
 
-// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-// import About from "./pages/About";
-// import Home from "./pages/Home";
-// import Contact from "./pages/Contact";
 
-// function App(){
-//   return(
-//     <BrowserRouter>
-//     <Routes>
-//       <Route path="/" element={<Home />} />
-//       <Route path="./pages/about"  element={<About />} />
-//       <Route path="./pages/contact" element={<Contact />} />
-//     </Routes>
-//      <nav>
-//         <Link to="/">Home</Link>
-//         <Link to="./pages/about">About</Link>
-//         <Link to="./pages/contact">Contact</Link>
-//     </nav>
-//     </BrowserRouter>
-//   );
-// }
-// export default App;
 
 
 
