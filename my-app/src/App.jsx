@@ -534,25 +534,95 @@
 
 
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import About from "./pages/About";
+// import Home from "./pages/Home";
+// import Contact from "./pages/Contact";
 
-function App(){
-  return(
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="./pages/about"  element={<About />} />
-      <Route path="./pages/contact" element={<Contact />} />
-    </Routes>
-     <nav>
-        <Link to="/">Home</Link>
-        <Link to="./pages/about">About</Link>
-        <Link to="./pages/contact">Contact</Link>
-    </nav>
-    </BrowserRouter>
-  );
+// function App(){
+//   return(
+//     <BrowserRouter>
+//     <Routes>
+//       <Route path="/" element={<Home />} />
+//       <Route path="./pages/about"  element={<About />} />
+//       <Route path="./pages/contact" element={<Contact />} />
+//     </Routes>
+//      <nav>
+//         <Link to="/">Home</Link>
+//         <Link to="./pages/about">About</Link>
+//         <Link to="./pages/contact">Contact</Link>
+//     </nav>
+//     </BrowserRouter>
+//   );
+// }
+// export default App;
+
+
+
+
+
+
+//Hooks
+// A Hook is a special React function that lets a functional component use React features.
+
+
+
+
+
+//context API
+
+// import UserContext from "./UserContext";
+// import Profile from "./Profile";
+
+// function App() {
+
+//     const user = "Sagun";
+
+//     return (
+//         <UserContext.Provider value={user}>
+//             <h1>heyy</h1>
+//             <Profile />
+
+//         </UserContext.Provider>
+//     );
+// }
+
+// export default App;
+
+
+
+//Normal api
+import { useEffect, useState } from "react";
+
+function App() {
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(function() {
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                setUsers(data);
+            });
+
+    }, []);
+
+    return (
+        <>
+            <h1>Users</h1>
+
+            {users.map(function(user) {
+                return (
+                    <p key={user.id}>
+                        {user.name}
+                    </p>
+                );
+            })}
+        </>
+    );
 }
+
 export default App;
