@@ -571,37 +571,93 @@
 
 
 //Normal api
+// import { useEffect, useState } from "react";
+
+// function App() {
+
+//     const [users, setUsers] = useState([]);
+
+//     useEffect(function() {
+
+//         fetch("https://jsonplaceholder.typicode.com/users")
+//             .then(function(response) {
+//                 return response.json();
+//             })
+//             .then(function(data) {
+//                 setUsers(data);
+//             });
+
+//     }, []);
+
+//     return (
+//         <>
+//             <h1>Users</h1>
+
+//             {users.map(function(user) {
+//                 return (
+//                     <p key={user.id}>
+//                         {user.name}
+//                     </p>
+//                 );
+//             })}
+//         </>
+//     );
+// }
+
+// export default App;
+
+
+
+
+//loading and error handling
 import { useEffect, useState } from "react";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-    const [users, setUsers] = useState([]);
+  useEffect(function () {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Something went wrong");
+        }
 
-    useEffect(function() {
+        return response.json();
+      })
+      .then(function (data) {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch(function (error) {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
 
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-                setUsers(data);
-            });
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
-    }, []);
+  if (error) {
+    return <h2>Error: {error}</h2>;
+  }
 
-    return (
-        <>
-            <h1>Users</h1>
+  return (
+    <div>
+      <h1>User List</h1>
 
-            {users.map(function(user) {
-                return (
-                    <p key={user.id}>
-                        {user.name}
-                    </p>
-                );
-            })}
-        </>
-    );
+      {users.map(function (user) {
+        return (
+          <div key={user.id}>
+            <h3>{user.name}</h3>
+            <p>{user.email}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default App;
