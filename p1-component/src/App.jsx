@@ -1,8 +1,20 @@
 import React from 'react'
+import Header from './component/Header'
+import Navbar from './component/Navr'
+import Card from './component/Card'
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
+    <>
+      <h1>hehehhehehehehe</h1>
+      <Header />
+      <Navbar />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </>
   )
 }
 
