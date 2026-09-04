@@ -2,3 +2,13 @@ input{
   margin:10px;
   padding: 10px;
 }
+body{
+  background-color: black;
+  color: white;
+  margin: 10px;
+
+}
+button{
+  margin: 10px;
+  padding: 10px;
+}
