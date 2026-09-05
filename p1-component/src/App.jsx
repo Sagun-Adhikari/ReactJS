@@ -6,11 +6,19 @@ import Card from './component/Card'
 function App() {
   return (
     <>
-      <h1>hehehhehehehehe</h1>
+      <h1>hehehhehehehehe, whatspp bruhhh</h1>
       <Header />
       <Navbar />
       <Card />
       <Card />
+      <Card />
+      <Card />
+      <Card />
+       <Card />
+      <Card />
+      <Card />
+      <Card />
+       <Card />
       <Card />
       <Card />
       <Card />
