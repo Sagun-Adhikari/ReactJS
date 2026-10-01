@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(177, 179, 179);
+}
+form{
+    border:2px solid black;
+    border-radius: 10px;
+    width: fit-content;
+ 
+    font-size: 40px;
+}
+input{
+    padding: 10px;
+    
+}
+.submit{
+    margin-left: 250px;
+}
