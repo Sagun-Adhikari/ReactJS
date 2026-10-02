@@ -1,0 +1,29 @@
+#header{
+    display: flex;
+    gap: 80%;
+}
+
+
+ nav {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        padding: 20px;
+        background-color: #222;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #00bfff;
+      }
+
+#body{
+    background-color: #58595a;
+}
+    
